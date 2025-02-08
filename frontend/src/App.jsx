@@ -1,9 +1,14 @@
 // import { useState } from 'react'
+import Sidebar from "./components/Sidebar";
+import MainPage from "./components/MainPage";
 
 function App() {
   return (
     <>
-      <h1>Hello World!</h1>
+      <div className="layout">
+        <Sidebar />
+        <MainPage />
+      </div>
     </>
   );
 }
