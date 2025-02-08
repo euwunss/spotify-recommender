@@ -14,8 +14,8 @@ body {
   padding: 20px;
 }
 
-.active {
-  color: #fff;
+a.active {
+  color: #fff !important;
 }
 
 /* SIDEBAR STYLES */
@@ -49,7 +49,7 @@ body {
 
 .links-item a {
   text-decoration: none;
-  color: inherit;
+  color: #a7a7a7;
   font-weight: bold;
   transition: color 0.2s ease-in;
 }

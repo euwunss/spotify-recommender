@@ -16,11 +16,7 @@ function Sidebar() {
 }
 
 function Navigation() {
-  const [activeLink, setActiveLink] = useState(null);
-
-  const handleClick = (index) => {
-    setActiveLink(index);
-  };
+  const [activeLink, setActiveLink] = useState(0);
 
   const links = [
     { name: "Home", icon: "src/assets/spotify-512.png" },
@@ -40,8 +36,9 @@ function Navigation() {
               <li key={index} className="links-item">
                 <img src={item.icon} alt="" />
                 <a
+                  href="#"
                   className={`${activeLink === index ? "active" : ""}`}
-                  onClick={() => handleClick(index)}
+                  onClick={() => setActiveLink(index)}
                 >
                   {item.name}
                 </a>
