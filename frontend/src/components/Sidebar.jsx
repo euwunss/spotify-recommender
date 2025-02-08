@@ -17,6 +17,7 @@ function Sidebar() {
 
 function Navigation() {
   const [activeLink, setActiveLink] = useState(0);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const links = [
     { name: "Home", icon: "src/assets/spotify-512.png" },
@@ -38,7 +39,14 @@ function Navigation() {
                 <a
                   href="#"
                   className={`${activeLink === index ? "active" : ""}`}
-                  onClick={() => setActiveLink(index)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActiveLink(index);
+
+                    if (index === 5) {
+                      setIsPopupVisible(true);
+                    }
+                  }}
                 >
                   {item.name}
                 </a>
