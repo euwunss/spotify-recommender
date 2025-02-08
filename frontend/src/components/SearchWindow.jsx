@@ -35,7 +35,7 @@ function UserInputComponent() {
     setUserInput(event.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setOutput(`Your entered song: ${userInput}`);
   };
