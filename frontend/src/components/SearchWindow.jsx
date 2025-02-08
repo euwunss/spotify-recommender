@@ -1,4 +1,5 @@
 import "/src/style.css";
+import { useState } from "react";
 
 function SearchWindow() {
   return (
@@ -17,20 +18,44 @@ function SearchWindow() {
                 accurately analyze its melody, tempo, and mood to recommend
                 tracks with comparable characteristics.
               </p>
-              <br />
-              <div className="search-container">
-                <input
-                  type="text"
-                  name="input"
-                  placeholder="What's your reference song?"
-                  className="search-bar"
-                />
-              </div>
-              <button className="search-btn">Search</button>
+              <UserInputComponent />
             </form>
           </main>
         </div>
       </div>
+    </>
+  );
+}
+
+function UserInputComponent() {
+  const [userInput, setUserInput] = useState("");
+  const [output, setOutput] = useState("");
+
+  const handleChange = (event) => {
+    setUserInput(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    event.preventDefault();
+    setOutput(`Your entered song: ${userInput}`);
+  };
+
+  return (
+    <>
+      <div className="search-container">
+        <input
+          type="text"
+          value={userInput}
+          onChange={handleChange}
+          placeholder="What's your reference song?"
+          className="search-bar"
+        />
+      </div>
+      <button onClick={handleSubmit} className="search-btn">
+        Submit
+      </button>
+
+      {output && <p className="output-text">{output}</p>}
     </>
   );
 }
