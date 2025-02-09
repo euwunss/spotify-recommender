@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from "/src/assets/Spotify_Full_Logo_RGB_White.png";
 import "/src/style.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function Sidebar() {
   return (
@@ -20,12 +21,36 @@ function Navigation() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const links = [
-    { name: "Home", icon: "src/assets/spotify-512.png" },
-    { name: "Search", icon: "src/assets/spotify-512.png" },
-    { name: "Your Library", icon: "src/assets/spotify-512.png" },
-    { name: "Create Playlist", icon: "src/assets/spotify-512.png" },
-    { name: "Liked Songs", icon: "src/assets/spotify-512.png" },
-    { name: "Similar Songs", icon: "src/assets/generate.png" },
+    {
+      name: "Home",
+      icon: "src/assets/Screenshot 2025-02-08 120616.png",
+      path: "/",
+    },
+    {
+      name: "Search",
+      icon: "src/assets/Screenshot 2025-02-08 120637.png",
+      path: "/search",
+    },
+    {
+      name: "Your Library",
+      icon: "src/assets/Screenshot 2025-02-08 120642.png",
+      path: "/library",
+    },
+    {
+      name: "Create Playlist",
+      icon: "src/assets/Screenshot 2025-02-08 120649.png",
+      path: "/create-playlist",
+    },
+    {
+      name: "Liked Songs",
+      icon: "src/assets/Screenshot 2025-02-08 120658.png",
+      path: "/liked-songs",
+    },
+    {
+      name: "Similar Songs",
+      icon: "src/assets/generate.png",
+      path: "/similar-songs",
+    },
   ];
 
   return (
@@ -36,11 +61,10 @@ function Navigation() {
             {links.map((item, index) => (
               <li key={index} className="links-item">
                 <img src={item.icon} alt="" />
-                <a
-                  href="#"
+                <Link
+                  to={item.path}
                   className={`${activeLink === index ? "active" : ""}`}
-                  onClick={(e) => {
-                    e.preventDefault();
+                  onClick={() => {
                     setActiveLink(index);
 
                     if (index === 5) {
@@ -49,7 +73,7 @@ function Navigation() {
                   }}
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </div>

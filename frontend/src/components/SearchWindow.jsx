@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "/src/style.css";
+import { useState } from "react";
 
 function SearchWindow() {
   const [song, setSong] = useState("");
@@ -49,6 +50,7 @@ function SearchWindow() {
                 accurately analyze its melody, tempo, and mood to recommend
                 tracks with comparable characteristics.
               </p>
+//               <UserInputComponent />
               <br />
               <div className="search-container">
                 <input
@@ -82,6 +84,39 @@ function SearchWindow() {
           </main>
         </div>
       </div>
+    </>
+  );
+}
+
+function UserInputComponent() {
+  const [userInput, setUserInput] = useState("");
+  const [output, setOutput] = useState("");
+
+  const handleChange = (event) => {
+    setUserInput(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setOutput(`Your entered song: ${userInput}`);
+  };
+
+  return (
+    <>
+      <div className="search-container">
+        <input
+          type="text"
+          value={userInput}
+          onChange={handleChange}
+          placeholder="What's your reference song?"
+          className="search-bar"
+        />
+      </div>
+      <button onClick={handleSubmit} className="search-btn">
+        Submit
+      </button>
+
+      {output && <p className="output-text">{output}</p>}
     </>
   );
 }
