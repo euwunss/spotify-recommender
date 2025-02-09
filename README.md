@@ -1,6 +1,6 @@
 # Spotify Song Recommender 
 ## Authors 
-Hiba Awais, Isabella Schush, Alexandra Golley, Daisy Maldonado, Olha Lashchukevych
+Hiba Awais, Isabella Schuch, Alexandra Golley, Daisy Maldonado, Olha Lashchukevych
 ## Overview
 We chose Fulcrum GT's "Make It Make Sense" track to improve a common frustration: Spotify's song recommendation system. Often dissatisfied with its suggestions, we wanted to make a solution by creating a song recommendation algorithm by leveraging machine learning techniques.
 Our program takes a song and its artist as inputs and recommends three songs of the same genre from a dataset of 90,000 songs. Some of the attributes we considered were dancibility, energy, valance, tempo, loudness and more, which we found are crucial for finding similarity between songs. 
@@ -31,7 +31,7 @@ The project is split into Python backend for the recommendation algorithm and re
 3. Set up Python environment and run program
 ### Frontend
 1. Install Dependencies
-2. Run the Program
+2. Run the Program (from the frontend file) 
 
 ## Code Overview 
 * Data Preprocessing Function
